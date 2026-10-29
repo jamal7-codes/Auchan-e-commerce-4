@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "",
+    "category": "Food",
+    "price": 0,
+    "image": ""
+  },
+  {
+    "id": 2,
+    "name": "",
+    "category": "Food",
+    "price": 0,
+    "image": ""
+  },
+  {
+    "id": 3,
+    "name": "",
+    "category": "Food",
+    "price": 0,
+    "image": ""
+  },
+  {
+    "id": 4,
+    "name": "",
+    "category": "Food",
+    "price": 0,
+    "image": ""
+  },
+  {
+    "id": 5,
+    "name": "",
+    "category": "Food",
+    "price": 0,
+    "image": ""
+  },
+  {
+    "id": 6,
+    "name": "",
+    "category": "Food",
+    "price": 0,
+    "image": ""
+  },
+ 
+  {"id": 7, "name": "", "category": "Drinks", "price": 0, "image": ""},
+  {"id": 8, "name": "", "category": "Drinks", "price": 0, "image": ""},
+  {"id": 9, "name": "", "category": "Drinks", "price": 0, "image": ""},
+  {"id": 10, "name": "", "category": "Drinks", "price": 0, "image": ""},
+  {"id": 11, "name": "", "category": "Drinks", "price": 0, "image": ""},
+  {"id": 12, "name": "", "category": "Drinks", "price": 0, "image": ""},
+ 
+  {"id": 13, "name": "", "category": "Home", "price": 0, "image": ""},
+  {"id": 14, "name": "", "category": "Home", "price": 0, "image": ""},
+  {"id": 15, "name": "", "category": "Home", "price": 0, "image": ""},
+  {"id": 16, "name": "", "category": "Home", "price": 0, "image": ""},
+  {"id": 17, "name": "", "category": "Home", "price": 0, "image": ""},
+  {"id": 18, "name": "", "category": "Home", "price": 0, "image": ""},
+ 
+  {"id": 19, "name": "", "category": "Personal care", "price": 0, "image": ""},
+  {"id": 20, "name": "", "category": "Personal care", "price": 0, "image": ""},
+  {"id": 21, "name": "", "category": "Personal care", "price": 0, "image": ""},
+  {"id": 22, "name": "", "category": "Personal care", "price": 0, "image": ""},
+  {"id": 23, "name": "", "category": "Personal care", "price": 0, "image": ""},
+  {"id": 24, "name": "", "category": "Personal care", "price": 0, "image": ""}
+]
