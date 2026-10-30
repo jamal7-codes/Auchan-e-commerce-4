@@ -1,45 +1,45 @@
 [
   {
     "id": 1,
-    "name": "",
+    "name": "HEPE",
     "category": "Food",
-    "price": 0,
-    "image": ""
+    "price": 25,
+    "image": "/images/fast food.webp"
   },
   {
     "id": 2,
-    "name": "",
+    "name": "food of america",
     "category": "Food",
-    "price": 0,
-    "image": ""
+    "price": 34,
+    "image": "/images/classic food of america.webp"
   },
   {
     "id": 3,
-    "name": "",
+    "name": "grain creative",
     "category": "Food",
-    "price": 0,
-    "image": ""
+    "price": 6,
+    "image": "/images/graine creative food.webp"
   },
   {
     "id": 4,
-    "name": "",
+    "name": "grain",
     "category": "Food",
-    "price": 0,
-    "image": ""
+    "price": 67,
+    "image": "/images/graine creative food.webp"
   },
   {
     "id": 5,
-    "name": "",
+    "name": "plateau repas",
     "category": "Food",
-    "price": 0,
-    "image": ""
+    "price": 99,
+    "image": "/images/plateau repas food.webp"
   },
   {
     "id": 6,
-    "name": "",
+    "name": "smartbox repas",
     "category": "Food",
-    "price": 0,
-    "image": ""
+    "price": 70,
+    "image": "/images/smartbox repas fast food.webp"
   },
  
   {"id": 7, "name": "", "category": "Drinks", "price": 0, "image": ""},

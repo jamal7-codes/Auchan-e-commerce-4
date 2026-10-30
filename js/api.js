@@ -6,7 +6,6 @@ export  function getProducts(){
         }
         return response.json();
  } )
- .then(products =>{
-    return products;
- })
-    }
+ 
+ }
+     
