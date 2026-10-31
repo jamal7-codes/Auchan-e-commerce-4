@@ -1,4 +1,5 @@
 export  function getProducts(){
+    
     return fetch('data/data.json')
     .then(response =>{
         if(!response.ok){
