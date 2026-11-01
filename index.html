@@ -36,12 +36,24 @@
     <h2 class="text-xl font-bold mb-4">
         Product Catalogue
     </h2>
+
+<input type="text" id="search-input" placeholder="Search products..." class="border rounded-lg w-full p-3 my-4">
+
+
+<div class="flex gap-2 mb-4">
+<button class="category-btn" data-category="All">All</button>
+<button class="category-btn" data-category="Food">Food</button>
+<button class="category-btn" data-category="Drinks">Drinks</button>
+<button class="category-btn" data-category="Home">Home</button>
+<button class="category-btn" data-category="Personal care">Personal care</button>
+
+</div>
+
 <div class="gap-3">
     <button class="border rounded-lg" id="grid-view">grid view</button>
     <button class="border rounded-lg" id="list-view">list view</button>
 </div>
  
-<input type="text" id="search-input" placeholder="Search products..." class="border rounded-lg w-full p-3 my-4">
 
     <div id="product-list" class="grid grid-cols-4 gap-3">
         <p>Loading products...</p>
