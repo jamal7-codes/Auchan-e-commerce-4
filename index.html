@@ -65,15 +65,31 @@
 
             </div>
 
-<div class="gap-3">
-    <button class="border rounded-lg" id="grid-view">grid view</button>
-    <button class="border rounded-lg" id="list-view">list view</button>
+<div class="flex justify-end items-center gap-2 mb-4">
+
+    <button
+        id="grid-view"
+        class="border rounded-lg px-4 py-2 bg-green-700 text-white hover:bg-green-600 transition"
+    >
+        Grid view
+    </button>
+
+    <button
+        id="list-view"
+        class="border rounded-lg px-4 py-2 bg-white text-gray-600 hover:bg-green-600 hover:text-white transition"
+    >
+        List view
+    </button>
+
 </div>
  
 
     <div id="product-list" class="grid grid-cols-4 gap-3">
         <p>Loading products...</p>
     </div>
+
+    <div id="pagination" class="flex justify-center items-center gap-2 mt-6">
+</div>
   </section>
 
         <aside id="basket" class="bg-white border border-gray-200 rounded-xl p-4">
