@@ -44,58 +44,23 @@ listView.addEventListener("click", function(){
          const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
 
             return matchesSearch && matchesCategory;
- 
-      });
 
-      // create HTML
-         const html = filteredProducts.map(product => {
-            return `<div class="bg-white border rounded-xl p-3">
-
-       <img class="w-full h-14 object-contain rounded-md" src="${product.image}" 
-       alt="${product.name}"> 
-        <h3 class = "text-lg font-bold mb-2">${product.name}</h3>
-         <p class="text-sm text-gray-500 mb-2">${product.category}</p>
-          <p class = "text-green-600 font-semibold text-lg">${product.price} $</p>
-    </div>` ;
-         }).join("")
-    productList.innerHTML = html
-         
-      
-   }
-
- 
-
- categoryButtons.forEach(button => {
-   button.addEventListener("click", function(){
-     selectedCategory = button.dataset.category;
-     updateProducts();
+  
     
 
-  }); 
- 
-   return `<div class="bg-white border rounded-xl p-3">
-
-       <img class="w-full h-14 object-contain rounded-md" src="${product.image}" 
-       alt="${product.name}"> 
-        <h3 class = "text-lg font-bold mb-2">${product.name}</h3>
-         <p class="text-sm text-gray-500 mb-2">${product.category}</p>
-          <p class = "text-green-600 font-semibold text-lg">${product.price} $</p>
-    </div>` ;
-
-}).join(""); 
- 
-    });
-  
- 
-
-// search input
-   searchInput.addEventListener("input", function(){
-     updateProducts();
-
       });
-   
-      updateProducts();
-      //filtred products
+
+ 
+if(filteredProducts.length === 0) {
+   productList.innerHTML = `
+   <div class="col-span-full text-center py-8"></div>
+   <p class="text-lg font-semibold text-gray-800">No products found.</p>
+   <p class="text-sm text-gray-500 mt-2">Try another search or category.</p>`;
+   return;
+} 
+
+
+           //filtred products
            const html = filteredProducts.map(product => {
 
 return `<div class="bg-white border rounded-xl p-3">
@@ -111,7 +76,32 @@ return `<div class="bg-white border rounded-xl p-3">
 
          //dispay filtred products
          productList.innerHTML = html
-   });
+
+      }
+ 
+      //category listener
+ categoryButtons.forEach(button => {
+   button.addEventListener("click", function(){
+     selectedCategory = button.dataset.category;
+     updateProducts();
+    
+
+  }); 
+ 
+ 
+ 
+    });
+  
+ 
+
+// search input
+   searchInput.addEventListener("input", function(){
+     updateProducts();
+
+      });
+   
+      updateProducts();
+     
 
  })
  .catch(error =>{
@@ -122,4 +112,3 @@ return `<div class="bg-white border rounded-xl p-3">
     
    
    },200);
-});
