@@ -72,8 +72,7 @@ listView.addEventListener("click", function(){
     
 
   }); 
-  const html1 = filteredProducts.map(product => {
-
+ 
    return `<div class="bg-white border rounded-xl p-3">
 
        <img class="w-full h-14 object-contain rounded-md" src="${product.image}" 
@@ -84,26 +83,10 @@ listView.addEventListener("click", function(){
     </div>` ;
 
 }).join(""); 
-productList.innerHTML = html1;
-
+ 
     });
   
  
-//display all products
- const productCart = products.map(product =>{
-
-    return `<div class="bg-white border rounded-xl p-3">
-
-       <img class="w-full h-14 object-contain rounded-md" src="${product.image}" 
-       alt="${product.name}"> 
-        <h3 class = "text-lg font-bold mb-2">${product.name}</h3>
-          <p class="text-sm text-gray-500 mb-2">${product.category}</p>
-          <p class = "text-green-600 font-semibold text-lg">${product.price} $</p>
-    </div>` ;
-});
-
-const html1 = productCart.join('');
-productList.innerHTML = html1;
 
 // search input
    searchInput.addEventListener("input", function(){
