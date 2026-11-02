@@ -65,34 +65,16 @@
 
             </div>
 
-            <!-- Grid/List toggle -->
-            <div class="flex items-center justify-end gap-2 mb-4">
-                <span class="text-sm text-gray-500">View:</span>
+<div class="gap-3">
+    <button class="border rounded-lg" id="grid-view">grid view</button>
+    <button class="border rounded-lg" id="list-view">list view</button>
+</div>
+ 
 
-                <button
-                    class="bg-green-700 text-white rounded-lg px-3 py-2"
-                    id="grid-view"
-                    aria-label="Grid view"
-                    type="button"
-                >▦</button>
-
-                <button
-                    class="bg-white text-gray-600 rounded-lg px-3 py-2"
-                    id="list-view"
-                    aria-label="List view"
-                    type="button"
-                >☰</button>
-            </div>
-
-            <!-- Products -->
-            <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                <p>Loading products...</p>
-            </div>
-
-            <!-- Pagination -->
-            <div id="pagination" class="flex justify-center items-center gap-2 mt-6"></div>
-
-        </section>
+    <div id="product-list" class="grid grid-cols-4 gap-3">
+        <p>Loading products...</p>
+    </div>
+  </section>
 
         <aside id="basket" class="bg-white border border-gray-200 rounded-xl p-4">
         </aside>
