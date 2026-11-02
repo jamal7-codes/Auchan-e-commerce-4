@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,53 +7,80 @@
     <title>Alphanich</title>
     <link rel="icon" type="image/x-icon" href="/images/Alphanich-logo-mobile.svg">
     <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 <body>
-    <!-- header -->
-   <header class="flex flex-col gap-4 px-4 py-4 bg-white border-b border-gray-200 md:flex-row md:items-center md:justify-between md:px-6">
-    
+
+    <!-- Header -->
+    <header class="flex flex-col gap-4 px-4 py-4 bg-white border-b border-gray-200 md:flex-row md:items-center md:justify-between md:px-6">
+
         <div class="flex flex-wrap items-center gap-3 md:gap-5">
-        <img src="/images/alphanich-logo.jpg" alt="logo" class="h-8 mr-2">
-        <strong class="text-xl font-bold text-green-800 mr-2">Alphanich</strong>
-        <span>Simple shopping</span>
+            <img src="/images/alphanich-logo.jpg" alt="Alphanich logo" class="h-8 mr-2">
+            <strong class="text-xl font-bold text-green-800 mr-2">Alphanich</strong>
+            <span>Simple shopping</span>
         </div>
 
         <nav>
-        <ul class="flex md:gap-6 items-center gap-3">
-            <li><a href="#Catalogue" class="font-bold px-2 py-1 hover:text-green-600">Catalogue</a></li>
-            <li ><a href="#About" class="font-bold px-2 py-1 hover:text-green-600">About</a></li>
-        </ul>
-    </nav>
-     <button class="bg-green-800 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700">Cart ($0.00)</button>
-   </header> 
+            <ul class="flex md:gap-6 items-center gap-3">
+                <li><a href="#Catalogue" class="font-bold px-2 py-1 hover:text-green-600">Catalogue</a></li>
+                <li><a href="#About" class="font-bold px-2 py-1 hover:text-green-600">About</a></li>
+            </ul>
+        </nav>
 
-<!-- main content -->
-   <main class="max-w-7xl mx-auto p-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
-  <section id="Catalogue" class="bg-white border border-gray-200 rounded-xl p-4 mb-6 lg:col-span-2">
- 
+        <button class="bg-green-800 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700">
+            Cart ($0.00)
+        </button>
+    </header>
 
+    <!-- Main content -->
+    <main class="max-w-7xl mx-auto p-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-    <h2 class="text-xl font-bold mb-4">
-        Product Catalogue
-    </h2>
+        <section id="Catalogue" class="bg-white border border-gray-200 rounded-xl p-4 mb-6 lg:col-span-2">
 
-<input type="text" id="search-input" placeholder="Search products..." class="border rounded-lg w-full p-3 my-4">
+            <h2 class="text-xl font-bold mb-4">Product Catalogue</h2>
 
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search products..."
+                class="border rounded-lg w-full p-3 my-4"
+            >
 
-<div class="flex gap-2 mb-4">
-   
-<button class="category-btn" data-category="All">All</button>
-<button class="category-btn" data-category="Food">Food</button>
-<button class="category-btn" data-category="Drinks">Drinks</button>
-<button class="category-btn" data-category="Home">Home</button>
-<button class="category-btn" data-category="Personal care">Personal care</button>
+            <!-- Category filters -->
+            <div class="flex flex-wrap gap-3 mb-6">
 
-</div>
+                <button class="category-btn px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-green-600 hover:text-white hover:border-green-600 transition"
+                    data-category="All">All</button>
 
-<div class="gap-3">
-    <button class="border rounded-lg" id="grid-view">grid view</button>
-    <button class="border rounded-lg" id="list-view">list view</button>
+                <button class="category-btn px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-green-600 hover:text-white hover:border-green-600 transition"
+                    data-category="Food">Food</button>
+
+                <button class="category-btn px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-green-600 hover:text-white hover:border-green-600 transition"
+                    data-category="Drinks">Drinks</button>
+
+                <button class="category-btn px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-green-600 hover:text-white hover:border-green-600 transition"
+                    data-category="Home">Home</button>
+
+                <button class="category-btn px-4 py-2 rounded-full border border-gray-300 text-gray-700 hover:bg-green-600 hover:text-white hover:border-green-600 transition"
+                    data-category="Personal care">Personal care</button>
+
+            </div>
+
+<div class="flex justify-end items-center gap-2 mb-4">
+
+    <button
+        id="grid-view"
+        class="border rounded-lg px-4 py-2 bg-green-700 text-white hover:bg-green-600 transition"
+    >
+        Grid view
+    </button>
+
+    <button
+        id="list-view"
+        class="border rounded-lg px-4 py-2 bg-white text-gray-600 hover:bg-green-600 hover:text-white transition"
+    >
+        List view
+    </button>
+
 </div>
  
 
@@ -60,23 +88,23 @@
         <p>Loading products...</p>
     </div>
 
-   <div id="pagination" class="flex justify-center items-center gap-2 mt-6  "></div>
+    <div id="pagination" class="flex justify-center items-center gap-2 mt-6">
+</div>
   </section>
 
-  <aside id="basket" class="bg-white border border-gray-200 rounded-xl p-4">
+        <aside id="basket" class="bg-white border border-gray-200 rounded-xl p-4">
+        </aside>
 
-  </aside >
-   </main>
+    </main>
 
-   <!-- Footer -->
-   <footer class="bg-white border-t border-gray-200 p-4 text-center">
-    <p class="text-sm text-gray-500">
-      © 2026 Alphanich. All rights reserved.
-    </p>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 p-4 text-center">
+        <p class="text-sm text-gray-500">
+            © 2026 Alphanich. All rights reserved.
+        </p>
+    </footer>
 
-   </footer>
-
-   <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/main.js"></script>
 
 </body>
 </html>
