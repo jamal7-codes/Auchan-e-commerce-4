@@ -11,7 +11,7 @@ const categoryButtons = document.querySelectorAll(".category-btn");
 
 let selectedCategory ="All";
  
-
+ const pagination = document.querySelector("#pagination")
 
 
 //grid button
@@ -34,6 +34,10 @@ listView.addEventListener("click", function(){
     .then(products =>{
    const allProducts = products
 
+   let totalPages = 1
+   let currentPage = 1;
+   const productsPerPage= 8;
+
    function updateProducts(){
       const searchText = searchInput.value.toLowerCase();
 
@@ -53,15 +57,46 @@ listView.addEventListener("click", function(){
  
 if(filteredProducts.length === 0) {
    productList.innerHTML = `
-   <div class="col-span-full text-center py-8"></div>
-   <p class="text-lg font-semibold text-gray-800">No products found.</p>
-   <p class="text-sm text-gray-500 mt-2">Try another search or category.</p>`;
+   <div class="col-span-full text-center py-8">
+     <p class="text-lg font-semibold text-gray-800">No products found.</p>
+     <p class="text-sm text-gray-500 mt-2">Try another search or category.</p> </div>`;
+
+     pagination.innerHTML ="";
    return;
 } 
 
 
+//pagination
+totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+ let paginationHTML = "";
+
+ paginationHTML += `<button data-action="prev" ${currentPage === 1 ? "disabled":""}>Previous</button>`
+
+ for(let i = 1; i <= totalPages; i++){
+ 
+        if (i === currentPage){
+       paginationHTML +=`<button data-page="${i}" class="bg-green-600 text-white border rounded-full w-10 h-10">${i}</button>`
+      }else{
+   paginationHTML +=`<button data-page="${i}" class="bg-gray-200 text-gray-800 border rounded-full w-10 h-10  ">${i}</button>`
+    }
+ }
+ paginationHTML += `<button data-action="next" ${currentPage === totalPages ?"disabled":""}>Next</button>`
+
+ pagination.innerHTML = paginationHTML;
+const start = (currentPage - 1)* productsPerPage;
+const end = start + productsPerPage;
+
+const pageProduct = filteredProducts.slice(start, end)
+
+  
+
+
+ 
+
+
            //filtred products
-           const html = filteredProducts.map(product => {
+           const html = pageProduct.map(product => {
 
 return `<div class="bg-white border rounded-xl p-3">
 
@@ -79,15 +114,39 @@ return `<div class="bg-white border rounded-xl p-3">
 
       }
  
+pagination.addEventListener("click", function(event){
+
+      const button = event.target.closest("button");
+
+   if(!button || button.disabled) return;
+
+   if(button.dataset.page){
+      currentPage = Number(button.dataset.page)
+   }
+else if( button.dataset.action === "prev"){
+   currentPage--;
+
+}else if (button.dataset.action === "next"){
+   currentPage++;
+}
+ 
+   updateProducts();
+
+
+
+  }); 
+ 
+
       //category listener
  categoryButtons.forEach(button => {
    button.addEventListener("click", function(){
      selectedCategory = button.dataset.category;
+     currentPage = 1;
      updateProducts();
-    
 
-  }); 
- 
+   })  
+
+    
  
  
     });
@@ -96,6 +155,7 @@ return `<div class="bg-white border rounded-xl p-3">
 
 // search input
    searchInput.addEventListener("input", function(){
+      currentPage = 1;
      updateProducts();
 
       });
