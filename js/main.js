@@ -34,14 +34,41 @@ listView.addEventListener("click", function(){
     .then(products =>{
    const allProducts = products
 
+   function updateProducts(){
+      const searchText = searchInput.value.toLowerCase();
+
+      //filter producsts
+      const filteredProducts = allProducts.filter(product => {
+         const matchesSearch = product.name.toLowerCase().includes(searchText);
+
+         const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
+
+            return matchesSearch && matchesCategory;
+ 
+      });
+
+      // create HTML
+         const html = filteredProducts.map(product => {
+            return `<div class="bg-white border rounded-xl p-3">
+
+       <img class="w-full h-14 object-contain rounded-md" src="${product.image}" 
+       alt="${product.name}"> 
+        <h3 class = "text-lg font-bold mb-2">${product.name}</h3>
+         <p class="text-sm text-gray-500 mb-2">${product.category}</p>
+          <p class = "text-green-600 font-semibold text-lg">${product.price} $</p>
+    </div>` ;
+         }).join("")
+    productList.innerHTML = html
+         
+      
+   }
 
  
 
  categoryButtons.forEach(button => {
    button.addEventListener("click", function(){
-      selectedCategory = button.dataset.category;
-      const filteredProducts = allProducts.filter(product => {
-    return selectedCategory === "All" || product.category === selectedCategory;
+     selectedCategory = button.dataset.category;
+     updateProducts();
     
 
   }); 
@@ -75,19 +102,16 @@ productList.innerHTML = html1;
     </div>` ;
 });
 
-const html = productCart.join('');
-productList.innerHTML = html;
+const html1 = productCart.join('');
+productList.innerHTML = html1;
 
 // search input
    searchInput.addEventListener("input", function(){
-      const searchText = searchInput.value.toLowerCase();
-
-   //filter products
-      const filteredProducts = allProducts.filter(product =>{
-          return product.name.toLowerCase().includes(searchText)
+     updateProducts();
 
       });
    
+      updateProducts();
       //filtred products
            const html = filteredProducts.map(product => {
 
@@ -107,12 +131,12 @@ return `<div class="bg-white border rounded-xl p-3">
    });
 
  })
-//  .catch(error =>{
-//         console.error('Could not load products:', error);
+ .catch(error =>{
+        console.error('Could not load products:', error);
       
-//   });
+  });
 
     
    
-   },100);
+   },200);
 });
