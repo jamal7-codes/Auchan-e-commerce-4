@@ -91,7 +91,7 @@ const pageProduct = filteredProducts.slice(start, end)
 
    const cardLayout = isGridView ? "flex-col ":"flex-row"
 
-return `<div class=" flex ${cardLayout} bg-white border rounded-xl p-3">
+return `<div draggable="true" data-id="${product.id}" class=" flex ${cardLayout} bg-white border rounded-xl p-3">
 
        <img class="w-full h-14 object-contain rounded-md" src="${product.image}" 
        alt="${product.name}"> 
@@ -107,6 +107,8 @@ return `<div class=" flex ${cardLayout} bg-white border rounded-xl p-3">
 
       }
 
+
+ 
 
  // Grid button 
 gridView.addEventListener("click", function () {
