@@ -20,6 +20,7 @@ let isGridView = true;
 
  const pagination = document.querySelector("#pagination")
 
+ 
 
  //load products
  setTimeout(() =>{

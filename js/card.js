@@ -1,18 +1,34 @@
 
 const cart =[];
 export function addToCart(product , cartItems){
-//checks whether the product already exist
-const alreadyExists = cart.some(item => item.id === product.id);
 
-if (alreadyExists)return;
+const cartTotal = document.querySelector("#cart-total")
 
-//adds it only if it is new
-cart.push(product)
- 
-cartItems.innerHTML += `<div>
-${product.name}
-${product.price} $
-</div>`;
+  
+const existingProduct = cart.find(item => item.id === product.id);
 
-}
- 
+if (existingProduct){
+    existingProduct.quantity++;
+
+}else{ 
+    
+    cart.push({...product, quantity:1})
+
+ }
+
+const total = cart.reduce((sum, item) => {
+    return sum + item.price * item.quantity;
+}, 0);
+
+cartTotal.textContent = `Total: ${total} $`;
+   
+cartItems.innerHTML = cart.map( item =>`
+    <div>
+ ${item.name}
+${item.price} $
+Quantity: ${item.quantity}
+
+</div>`
+
+).join("")
+ }
