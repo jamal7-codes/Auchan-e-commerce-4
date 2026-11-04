@@ -1,6 +1,8 @@
 
 import {getProducts} from './api.js';
 
+import { setupDragDrop } from './dragDrop.js';
+
 const productList = document.querySelector("#product-list")
 
 const gridView = document.querySelector("#grid-view");
@@ -9,6 +11,8 @@ const listView = document.querySelector("#list-view");
 const searchInput = document.querySelector("#search-input");
 
 const categoryButtons = document.querySelectorAll(".category-btn");
+
+const basket = document.querySelector("#basket")
 
 let selectedCategory ="All";
  
@@ -24,7 +28,7 @@ let isGridView = true;
     .then(products =>{
    const allProducts = products
 
-
+setupDragDrop(productList, basket, allProducts)
 
    let totalPages = 1
    let currentPage = 1;
@@ -216,4 +220,4 @@ else if( button.dataset.action === "prev"){
 
     
    
-   },200);
+   },300);
