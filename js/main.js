@@ -1,7 +1,12 @@
 
 import {getProducts} from './api.js';
-
+import { renderCart } from './card.js';
 import { setupDragDrop } from './dragDrop.js';
+
+
+const cartItems = document.querySelector("#cart-items")
+
+renderCart(cartItems)
 
 const productList = document.querySelector("#product-list")
 
