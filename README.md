@@ -48,11 +48,15 @@ auchan-ecommerce/
 ├── css/
 │   └── style.css
 │
-├── js/
-│   ├── main.js
-│   ├── api.js
-│   ├── products.js
-│   └── cart.js
+js/
+├── main.js
+├── api.js
+├── products.js
+├── cart.js
+├── dragDrop.js
+├── storage.js
+├── ui.js
+└── validation.js
 │
 └── images/
 ```
